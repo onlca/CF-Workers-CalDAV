@@ -137,6 +137,7 @@ export class CalDAVHandler {
         <c:supported-calendar-component-set>
           <c:comp name="VEVENT"/>
           <c:comp name="VTODO"/>
+          <c:comp name="VJOURNAL"/>
         </c:supported-calendar-component-set>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
@@ -232,6 +233,7 @@ export class CalDAVHandler {
         <c:supported-calendar-component-set>
           <c:comp name="VEVENT"/>
           <c:comp name="VTODO"/>
+          <c:comp name="VJOURNAL"/>
         </c:supported-calendar-component-set>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
@@ -334,10 +336,10 @@ export class CalDAVHandler {
       const r2Object = await this.r2.get(`${calendarId}/${obj.id}`);
       if (r2Object) {
         const content = await r2Object.text();
-        // Extract VEVENT section
-        const eventMatch = content.match(/BEGIN:VEVENT[\s\S]*?END:VEVENT/);
-        if (eventMatch) {
-          icalContent += eventMatch[0] + '\r\n';
+        // Extract VEVENT, VTODO, or VJOURNAL section
+        const componentMatch = content.match(/BEGIN:(VEVENT|VTODO|VJOURNAL)[\s\S]*?END:\1/);
+        if (componentMatch) {
+          icalContent += componentMatch[0] + '\r\n';
         }
       }
     }

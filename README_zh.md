@@ -4,7 +4,7 @@
 
 ## 🌟 特性
 
-- ✅ **CalDAV 协议支持**
+- ✅ **CalDAV 协议支持** - 支持 VCALENDAR, VTODO, VJOURNAL
 - ✅ **单用户多设备** - 支持多个设备同时同步
 - ✅ **多平台客户端支持** - macOS, iOS, Android (DAVx⁵), Thunderbird
 - ✅ **无服务器架构** - 基于 Cloudflare Workers，无需维护服务器

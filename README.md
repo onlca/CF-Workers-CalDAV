@@ -4,7 +4,7 @@ A CalDAV server implementation based on Cloudflare Workers + D1 + R2 + KV.
 
 ## 🌟 Features
 
-- ✅ **CalDAV Protocol Support**
+- ✅ **CalDAV Protocol Support** - Support VCALENDAR, VTODO, VJOURNAL
 - ✅ **Single User, Multiple Devices** - Support synchronization across multiple devices
 - ✅ **Multi-Platform Client Support** - macOS, iOS, Android (DAVx⁵), Thunderbird
 - ✅ **Serverless Architecture** - Based on Cloudflare Workers, no server maintenance required
