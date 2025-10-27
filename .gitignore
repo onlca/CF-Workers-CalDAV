@@ -28,3 +28,5 @@ uv.lock
 *.tmp
 *.bak
 *~
+
+scripts/
